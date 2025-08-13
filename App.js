@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import FailurePortfolioMVP from "./FailurePortfolioMVP";
 import "./styles.css";
@@ -18,19 +19,19 @@ export default function App() {
         {/* Left sidebar */}
         <aside className="left">
           <button
-            className={\`navbtn \${tab === "feed" ? "active" : ""}\`}
+            className={`navbtn ${tab === "feed" ? "active" : ""}`}
             onClick={() => setTab("feed")}
           >
             フィード（マッチ）
           </button>
           <button
-            className={\`navbtn \${tab === "case" ? "active" : ""}\`}
+            className={`navbtn ${tab === "case" ? "active" : ""}`}
             onClick={() => setTab("case")}
           >
             失敗ポートフォリオ登録
           </button>
           <button
-            className={\`navbtn \${tab === "need" ? "active" : ""}\`}
+            className={`navbtn ${tab === "need" ? "active" : ""}`}
             onClick={() => setTab("need")}
           >
             企業ニーズ登録
@@ -54,16 +55,22 @@ export default function App() {
           <div className="card">
             <div className="card-title">注目のタグ</div>
             <div className="pills">
-              {["PMF", "チャーン", "オンボーディング", "需要予測", "GTM"].map((t) => (
-                <span key={t} className="pill">{t}</span>
-              ))}
+              {["PMF", "チャーン", "オンボーディング", "需要予測", "GTM"].map(
+                (t) => (
+                  <span key={t} className="pill">
+                    {t}
+                  </span>
+                )
+              )}
             </div>
           </div>
           <div className="card">
             <div className="card-title">最近の登録（例）</div>
             <div className="pills">
               {["SaaS PM", "ロジ新規事業", "Fintech B2C"].map((t) => (
-                <span key={t} className="pill">{t}</span>
+                <span key={t} className="pill">
+                  {t}
+                </span>
               ))}
             </div>
           </div>
@@ -72,9 +79,24 @@ export default function App() {
 
       {/* Mobile bottom nav */}
       <nav className="bottomnav">
-        <button className={tab==="feed"?"active":""} onClick={()=>setTab("feed")}>フィード</button>
-        <button className={tab==="case"?"active":""} onClick={()=>setTab("case")}>失敗</button>
-        <button className={tab==="need"?"active":""} onClick={()=>setTab("need")}>企業</button>
+        <button
+          className={tab === "feed" ? "active" : ""}
+          onClick={() => setTab("feed")}
+        >
+          フィード
+        </button>
+        <button
+          className={tab === "case" ? "active" : ""}
+          onClick={() => setTab("case")}
+        >
+          失敗
+        </button>
+        <button
+          className={tab === "need" ? "active" : ""}
+          onClick={() => setTab("need")}
+        >
+          企業
+        </button>
       </nav>
     </div>
   );
