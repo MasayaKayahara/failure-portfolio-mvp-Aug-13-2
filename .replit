@@ -5,7 +5,8 @@ run = "node index.js"
 channel = "stable-25_05"
 
 [deployment]
-run = ["sh", "-c", "node index.js"]
+run = ["sh", "-c", "npx serve -s build -l 5000"]
+build = ["sh", "-c", "npm run build"]
 
 [workflows]
 runButton = "React Development Server"
